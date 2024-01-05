@@ -1,0 +1,55 @@
+<style>
+    .logo {
+width: 100px;
+border-width: 1px;
+border-radius: 5px;
+border-color: red;
+color: red;
+margin-left: 3px;
+}
+
+</style>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+                 <button class="btn btn-outline-danger ms-2" type="submit">log out</button>
+                {{!-- <button class="logo" type="submit">log out</button> --}}
+            </form>
+        </div>
+    </div>
+</nav>
+
+<section >
+    <div class="container">
+        <div class="d-flex ">
+        
+            {{#each products}}
+            <div class="card" style="width: 18rem;">
+                <img src="{{this.image}}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.name}}</h5>
+                    <p class="card-text">{{this.storage}}</p>
+                    <p class="card-text">{{this.color}}</p>
+                    <a href="#" class="btn btn-primary">buy </a>
+                    <a href="#" class="btn btn-primary">add to cart</a>
+                </div>
+            </div>
+            {{/each}}
+            </div>
+       
+    </div>
+</section>

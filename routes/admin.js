@@ -5,6 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   
   res.render('log')
+  // hello jabeer
 })
 
 

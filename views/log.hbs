@@ -24,7 +24,9 @@
     </div>
   </div>
 </form> --}}
-<form action="/login" method="post">
+
+
+{{!-- <form action="/login" method="post">
   	<!-- user input-->
   	Username:<br>
   	<input type="text" name="username" placeholder="Username" required><br><br>
@@ -32,4 +34,21 @@
   	<input type="password" name="password" placeholder="Password" required><br><br>
   	<!-- submit button -->
   	<input type="submit" value="login">
-	</form>
+	</form> --}}
+
+  <div class="login">
+			<h1>Login</h1>
+			<form action="/login" method="post">
+				<label for="email">
+					<!-- font awesome icon -->
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="email" placeholder="email" id="email" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<a href="/signup">are you a new user?</a>
+				<input type="submit" value="Login">
+			</form>
+		</div>

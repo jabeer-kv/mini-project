@@ -37,13 +37,12 @@ margin-left: 3px;
     <div class="container">
         <div class="d-flex ">
         
-            {{#each products}}
+            {{#each product}}
             <div class="card" style="width: 18rem;">
                 <img src="{{this.image}}" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">{{this.name}}</h5>
                     <p class="card-text">{{this.storage}}</p>
-                    <p class="card-text">{{this.color}}</p>
                     <a href="#" class="btn btn-primary">buy </a>
                     <a href="#" class="btn btn-primary">add to cart</a>
                 </div>

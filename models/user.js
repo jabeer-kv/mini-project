@@ -19,4 +19,5 @@ const signup=new mongoose.Schema({
     }
 
 })
-module.export=connect
+
+module.exports=new mongoose.model('users',signup)

@@ -11,7 +11,9 @@ margin-left: 3px;
 </style>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
+       
         <a class="navbar-brand" href="#">admin</a>
+        
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -23,46 +25,59 @@ margin-left: 3px;
                 </li>
                 
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-                <button class="logo" type="submit">log out</button>
-            </form>
+            {{!-- <form action="/search" method="POST">
+                <input class="form-control me-2" name="search" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success"  type="submit">Search</button>
+                </form> --}}
+            
+                <form class="d-flex" action="/search" method="POST">
+                <input class="form-control me-2" name="search" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success"  type="submit">Search</button>
+                </form>
+
+                <form action="/logout" method="get">
+                 <button class="btn btn-outline-danger ms-2" type="submit">log out</button>
+                 </form>
+
+                {{!-- <button class="logo" type="submit">log out</button> --}}
+            
         </div>
     </div>
 </nav>
-
-
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">email</th>
       <th scope="col">name</th>
       <th scope="col">password</th>
-      <th scope="col">option</th>
+      <th scope="col">age</th>
+       <th scope="col"></th>
+        <th scope="col"></th>
     </tr>
   </thead>
+
+{{#each users}}
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
+      <td>{{this.email}}</td>
+      <td>{{this.name}}</td>
+      <td>{{this.password}}</td>
+      <td>{{this.age}}</td>
+      {{!-- <form action="/edit/{{this._id}}"  method="post">
       <td><button class="btn btn-outline-success" type="submit">edit</button>
-      <button class="btn btn-outline-danger" type="submit">delete</button></td>
+      </form> --}}
+      <td><a class="btn btn-outline-success" href="/edit/{{this._id}}">edit</a></td>
+      <td>
+      <form action="/delete" method="post">
+      <input type="hidden" name="delete" value="{{this.id}}">
+      <button class="btn btn-outline-danger" type="submit" onclick="return confirm('Do you need to delete?{{this.name}}')">delete</button></td>
+      </form>
+      </td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td><button class="btn btn-outline-success" type="submit">edit</button>
-      <button class="btn btn-outline-danger" type="submit">delete</button></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td><button class="btn btn-outline-success" type="submit">edit</button>
-      <button class="btn btn-outline-danger" type="submit">delete</button></td>
-    </tr>
+ 
   </tbody>
+{{/each}}
 </table>

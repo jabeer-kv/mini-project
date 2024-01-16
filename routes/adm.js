@@ -3,9 +3,9 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  
+  console.log('iam aadmin ')
   res.render('log')
-  // hello jabeer
+  
 })
 
 

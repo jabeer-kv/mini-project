@@ -8,7 +8,7 @@ connect.then(()=>{
   console.log('error');
 })
 
-const signup=new mongoose.Schema({
+const deletion=new mongoose.Schema({
     email:{
         type:String,
         required:true,
@@ -33,4 +33,4 @@ const signup=new mongoose.Schema({
 
 })
 
-module.exports=new mongoose.model('users',signup)
+module.exports=new mongoose.model('delete',deletion)
